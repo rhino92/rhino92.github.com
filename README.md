@@ -1,86 +1,100 @@
-# Jekyll-Jacman
+# Material Theme for Jekyll!
+## DEMO: [code.liquidthink.net](http://www.code.liquidthink.net)
+#### created with React, Redux, React-Router and transpiled with Webpack.
+![travis-ci](https://api.travis-ci.org/InsidiousMind/material-bliss-jekyll-theme.svg?branch=master)
 
-**中文 | [English](/README_en.md)**
+Made with React and served statically and dynamically
 
-Jekyll-Jacman 是为 [Jekyll](http://jekyllrb.com) 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 [Hexo Jacman](https://github.com/wuchong/jacman) 移植而来。
-
- * [主题演示](http://simpleyyt.github.io/jekyll-jacman/)
- * [Yitao's Blog](http://simpleyyt.github.io)
- * [如何使用 Jacman 主题](http://simpleyyt.github.io/jekyll-jacman/jekyll/2015/09/20/how-to-use-jacman)
-
-##本地搭建
-
-确保已安装`Ruby 2.1.0` 或更高版本：
-
-```sh
-ruby --version
+### **in order to build:**
+#### for Production
+```
+./build-prod.sh //for production build
 ```
 
-安装`Bundler`：
-
-```sh
-gem install bundler
+#### for Development:
+run both build-dev and npm run jekyll in different terminals
 ```
-
-下载 Jacman 主题：
-
-```sh
-git clone https://github.com/Simpleyyt/jekyll-jacman.git
-cd jekyll-jacman
+npm run jekyll // in one terminal
+./build-dev.sh //in another
 ```
+### Features:
+- Two Themes: Light and Dark
+- Fully Responsive for most devices
+- Dynamic Fuzzy Search
+- Push-out Menu to save space and create focus for users
+- Dynamic Project Page in a masonry layout built
+- The pros of dynamic webpages matched with the awesomeness of static Jekyll
+- Optimized (99/100 on testmysite by google) with Jekyll Assets and Webpack
+- included RESTful-like API (with [jekyll-react plugin](https://github.com/InsidiousMind/Jekyll-React))
+- Static or Dynamic Pages with just a frontmatter option
+- MORE TO COME
 
-安装依赖：
+### Screen Shots
 
-```sh
-bundle install
-```
+Dark Theme
+![Dark Theme](http://i.imgur.com/GfFoLXS.png)
 
-运行 Jekyll：
+Light Theme
+![Light Theme](http://i.imgur.com/cdIgtax.png)
 
-```sh
-bundle exec jekyll server
-```
+Dark Theme with Push out menu active
+![Dark Theme Push Out](http://i.imgur.com/xsjkszO.png)
 
-更多细节可以参考：[Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
+Project Page
+![Project Page](http://i.imgur.com/VnLqCpi.png)
 
-##功能
-- **菜单 menu**  
- 主导航菜单
-- **控件 widget**  
- 侧边栏的控件。包括：Github 名片	、分类、标签、RSS、友情链接、微博秀。
-- **图片相关 Image**  
- 设置网站图标、网站logo、作者头像、博客顶部大图等。还提供了多种图片样式`img-logo`,`img-topic`,`img-center`等。
-- **首页模式 index**  
- 主题提供了两种首页展示模式。
-- **作者 author**  
- 作者信息，主要用于展示网站右下角的社交网络链接。包括：微博、豆瓣、知乎、邮箱、GitHub、StackOverflow、Twitter、Facebook、Linkedin、Google+。
-- **目录 toc**  
- 在文章中和侧边栏可以显示目录。
-- **评论 comments**  
- 支持 [多说](http://duoshuo.com/) & [disqus](https://disqus.com/) 评论。
-- **分享 jiathis**  
- 启用 内建分享工具 或 [加网](http://www.jiathis.com/) 分享系统。
-- **网站统计 Analytiscs**  
- 支持 [谷歌统计](http://www.google.com/analytics/) & [百度统计](http://tongji.baidu.com/) & [CNZZ站长统计](http://www.cnzz.com/)。
-- **Search**  
- 支持 [谷歌自定义搜索](https://www.google.com/cse/ ) & [百度站内搜索](http://zn.baidu.com/)  &[微搜索](http://tinysou.com/)。
-- **totop**  
- 回到顶部。
-- **rss**  
- RSS 订阅链接。
-- **fancybox**  
- 图片查看的 [Fancybox](http://fancyapps.com/fancybox/) 工具。
-- **其他**
- 你可以设置侧边栏在博文页面中不显示。
+Single Post
+![Post](http://i.imgur.com/AcZ8nNi.png)
 
-##关于 Kramdown 引擎
-由于 Github 不再支持原来的 redcarpet，因此每次更新时都会有 Page build warning 发到邮件。我新建了一个分支 kramdown，把 Markdown 引擎换成了 kramdown，把高亮换成了 rough。但是，kramdown 的 markdown 语法比较严格，我不喜欢。所以，你也可以像我一样建个规则过滤 Page build warning 邮件。
 
-##协议
-[MIT](/LICENSE)
+## Site Layout
 
-##捐赠
+`./react-dev/pages`
+- These are static Jekyll components being rendered with react
 
-支付宝捐赠链接还是要有的，万一真的有人捐呢。
+`./react-dev/helpers.js`
+- these are global helpers. Right now all that is included are the static routes of you're site. Put all your static routes there (in 'staticRoutes' array), you don't need the full route just the base after your url So for example, if my posts are static and are at
+ `http://www.example.com/posts/this-is-a-post.html`
+ you just need "/posts/"
+ this makes the loading of some parts of the site seem almost 'instant', while preserving the SEO of your site since Google can crawl the static content
 
-![支付宝扫码捐赠](http://p1.bpimg.com/567571/9a4a158daee8aa69.png)
+`./react-dev/components/menu_items.js`
+
+- This is where your menu items are rendered. If you want a new item, add an object to the Hashlist with it's corresponding path (from your root url) Javascript object. IE if it is:
+
+`const menuItems = { Home: '/', About: '/about/', Projects: '/projects/' };`
+and you want another entry, "Coding", with a path '/coding/' from the root url the object should look something like this :
+`const menuItems = { Home: '/', About: '/about/', Projects: '/projects/', Coding: '/coding'};`
+
+
+`./react-dev/actions/index.js`
+- this is where the magic happens from the JSON our Jekyll plugins rendered ( Jekyll_pages_api and Jekyll-react)
+You're going to want to add your site url to the `ROOT_URL` variable
+EX:
+if your site is at `http://www.example.com` change
+`const ROOT_URL = 'http://test_domain.com:4000';`
+to
+`const ROOT_URL = 'http://example.com';`
+
+
+### Site Config Variables:
+any site configuration that you want to let React use, put under 'react' in your `_config.yml`. This will be grabbed by the siteInfo action creator and put through it's corresponding reducer
+
+### TODO:
+ - [x] create a jekyll plugin to output all [YML config] site data into JSON, in such a way which is importable to react and can be used to manage state
+ - [x] [possible TODO, maybe redundant. ?] Rendered JS to HTML and outputted into a folder for Jekyll to take it. This allows us to use React components on `_layouts`
+ - [x] create a Dynamic Search Function with Auto Fill
+ - [x] Finish implementing Toggle Theme Switch
+ - [ ] add useful important information to single-post post meta
+ - [ ] make footer look better on mobile
+ - [ ] Implement 'sliding' on mobile-touchA
+ - [ ] make expanded search bar more responsive on mobile
+ - [ ] create category pages
+ - [ ] add pagination
+ - [ ] Make different post 'types' (IE Fullsize page)
+ - [ ] make it easier to use with Jekyll
+ - [ ] Save theme in sites cookies
+
+
+### Contribution
+Want to contribute? Found an issue? Jump right in! I welcome any help I can get, and will work with you to fix any issues.
