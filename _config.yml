@@ -1,7 +1,7 @@
 # Setup
-name:         Project or Site name (Architect Theme)
-tagline:      A responsive theme for your project on GitHub Pages
-baseurl:      ""
+name:        RhinoBlog
+tagline:     不可描述
+baseurl:      "https://rhino92.github.io/"
 
 # Gems
 gems:
