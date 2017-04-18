@@ -1,92 +1,86 @@
-# Architect theme
+# Jekyll-Jacman
 
-This is a [Jekyll][1] theme that is an adaptation of [@jasonlong][2]'s [Architect theme][4] on [GitHub Pages][3].
+**中文 | [English](/README_en.md)**
 
-This is the raw HTML and styles that are used for the *Architect* theme on [GitHub Pages](http://pages.github.com/).
+Jekyll-Jacman 是为 [Jekyll](http://jekyllrb.com) 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 [Hexo Jacman](https://github.com/wuchong/jacman) 移植而来。
 
-![](http://cl.ly/image/1x0Q3213330G/content)
+ * [主题演示](http://simpleyyt.github.io/jekyll-jacman/)
+ * [Yitao's Blog](http://simpleyyt.github.io)
+ * [如何使用 Jacman 主题](http://simpleyyt.github.io/jekyll-jacman/jekyll/2015/09/20/how-to-use-jacman)
 
-# Getting Started
+##本地搭建
 
-## Prerequisites
+确保已安装`Ruby 2.1.0` 或更高版本：
 
-To install this theme, jekyll is required to be installed on your system. Head over to the [docs](https://jekyllrb.com/docs/installation/) and install the four requirements (Ruby, RubyGems, Node.js and Python 2.7). If you're on a Mac system, it's likely the only package you'll need to install is Node.js
-
-Once you've installed the requirements, run this command in your terminal:
-
-```
-$ sudo gem install jekyll
+```sh
+ruby --version
 ```
 
-You'll also need to install the bundler package:
+安装`Bundler`：
 
-```
-$ sudo gem install bundler
-```
-
-## Downloading and Installing the theme
-
-Download the theme
-
-```
-http://github.com/pietromenna/jekyll-architect-theme/archive/master.zip
+```sh
+gem install bundler
 ```
 
-Unzip it and use it as a regular jekyll folder.
+下载 Jacman 主题：
 
-```
-$ unzip jekyll-architect-theme-master.zip
-```
-
-Get inside the newly extracted folder
-
-```
-$ cd jekyll-architect-theme-master
+```sh
+git clone https://github.com/Simpleyyt/jekyll-jacman.git
+cd jekyll-jacman
 ```
 
-Install the dependencies
+安装依赖：
 
-```
-$ bundle install
-```
-
-Use it!
-
-```
-$ jekyll serve
+```sh
+bundle install
 ```
 
-# Setup
+运行 Jekyll：
 
-Some important configuration can be done in the file `_config.yml`. Please, check the Setup section in that file.
+```sh
+bundle exec jekyll server
+```
 
+更多细节可以参考：[Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
 
-## baseurl
+##功能
+- **菜单 menu**  
+ 主导航菜单
+- **控件 widget**  
+ 侧边栏的控件。包括：Github 名片	、分类、标签、RSS、友情链接、微博秀。
+- **图片相关 Image**  
+ 设置网站图标、网站logo、作者头像、博客顶部大图等。还提供了多种图片样式`img-logo`,`img-topic`,`img-center`等。
+- **首页模式 index**  
+ 主题提供了两种首页展示模式。
+- **作者 author**  
+ 作者信息，主要用于展示网站右下角的社交网络链接。包括：微博、豆瓣、知乎、邮箱、GitHub、StackOverflow、Twitter、Facebook、Linkedin、Google+。
+- **目录 toc**  
+ 在文章中和侧边栏可以显示目录。
+- **评论 comments**  
+ 支持 [多说](http://duoshuo.com/) & [disqus](https://disqus.com/) 评论。
+- **分享 jiathis**  
+ 启用 内建分享工具 或 [加网](http://www.jiathis.com/) 分享系统。
+- **网站统计 Analytiscs**  
+ 支持 [谷歌统计](http://www.google.com/analytics/) & [百度统计](http://tongji.baidu.com/) & [CNZZ站长统计](http://www.cnzz.com/)。
+- **Search**  
+ 支持 [谷歌自定义搜索](https://www.google.com/cse/ ) & [百度站内搜索](http://zn.baidu.com/)  &[微搜索](http://tinysou.com/)。
+- **totop**  
+ 回到顶部。
+- **rss**  
+ RSS 订阅链接。
+- **fancybox**  
+ 图片查看的 [Fancybox](http://fancyapps.com/fancybox/) 工具。
+- **其他**
+ 你可以设置侧边栏在博文页面中不显示。
 
-`baseurl` parameter is required in the case the site doesn't sit on the root of the domain. For example: http://pietromenna.github.io/jekyll-architect-theme
+##关于 Kramdown 引擎
+由于 Github 不再支持原来的 redcarpet，因此每次更新时都会有 Page build warning 发到邮件。我新建了一个分支 kramdown，把 Markdown 引擎换成了 kramdown，把高亮换成了 rough。但是，kramdown 的 markdown 语法比较严格，我不喜欢。所以，你也可以像我一样建个规则过滤 Page build warning 邮件。
 
-In the case above the baseurl should be set to "/jekyll-architect-theme".
+##协议
+[MIT](/LICENSE)
 
-In the case the site sits in the root, you can leave `baseurl` as empty "".
+##捐赠
 
+支付宝捐赠链接还是要有的，万一真的有人捐呢。
 
-For more details read about [Jekyll][1] on its web page.
-
-# Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/pietromenn/jekyll-architect-theme.
-
-# Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-You theme is setup just like a normal Jelyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-# License
-
-This work is licensed under a [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/).
-
-[1]: http://jekyllrb.com
-[2]: https://github.com/jasonlong
-[3]: http://pages.github.com/
-[4]: http://github.com/jasonlong/architect-theme
+![支付宝扫码捐赠](http://p1.bpimg.com/567571/9a4a158daee8aa69.png)
