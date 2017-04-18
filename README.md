@@ -1,100 +1,92 @@
-# Material Theme for Jekyll!
-## DEMO: [code.liquidthink.net](http://www.code.liquidthink.net)
-#### created with React, Redux, React-Router and transpiled with Webpack.
-![travis-ci](https://api.travis-ci.org/InsidiousMind/material-bliss-jekyll-theme.svg?branch=master)
+# Architect theme
 
-Made with React and served statically and dynamically
+This is a [Jekyll][1] theme that is an adaptation of [@jasonlong][2]'s [Architect theme][4] on [GitHub Pages][3].
 
-### **in order to build:**
-#### for Production
+This is the raw HTML and styles that are used for the *Architect* theme on [GitHub Pages](http://pages.github.com/).
+
+![](http://cl.ly/image/1x0Q3213330G/content)
+
+# Getting Started
+
+## Prerequisites
+
+To install this theme, jekyll is required to be installed on your system. Head over to the [docs](https://jekyllrb.com/docs/installation/) and install the four requirements (Ruby, RubyGems, Node.js and Python 2.7). If you're on a Mac system, it's likely the only package you'll need to install is Node.js
+
+Once you've installed the requirements, run this command in your terminal:
+
 ```
-./build-prod.sh //for production build
+$ sudo gem install jekyll
 ```
 
-#### for Development:
-run both build-dev and npm run jekyll in different terminals
+You'll also need to install the bundler package:
+
 ```
-npm run jekyll // in one terminal
-./build-dev.sh //in another
+$ sudo gem install bundler
 ```
-### Features:
-- Two Themes: Light and Dark
-- Fully Responsive for most devices
-- Dynamic Fuzzy Search
-- Push-out Menu to save space and create focus for users
-- Dynamic Project Page in a masonry layout built
-- The pros of dynamic webpages matched with the awesomeness of static Jekyll
-- Optimized (99/100 on testmysite by google) with Jekyll Assets and Webpack
-- included RESTful-like API (with [jekyll-react plugin](https://github.com/InsidiousMind/Jekyll-React))
-- Static or Dynamic Pages with just a frontmatter option
-- MORE TO COME
 
-### Screen Shots
+## Downloading and Installing the theme
 
-Dark Theme
-![Dark Theme](http://i.imgur.com/GfFoLXS.png)
+Download the theme
 
-Light Theme
-![Light Theme](http://i.imgur.com/cdIgtax.png)
+```
+http://github.com/pietromenna/jekyll-architect-theme/archive/master.zip
+```
 
-Dark Theme with Push out menu active
-![Dark Theme Push Out](http://i.imgur.com/xsjkszO.png)
+Unzip it and use it as a regular jekyll folder.
 
-Project Page
-![Project Page](http://i.imgur.com/VnLqCpi.png)
+```
+$ unzip jekyll-architect-theme-master.zip
+```
 
-Single Post
-![Post](http://i.imgur.com/AcZ8nNi.png)
+Get inside the newly extracted folder
 
+```
+$ cd jekyll-architect-theme-master
+```
 
-## Site Layout
+Install the dependencies
 
-`./react-dev/pages`
-- These are static Jekyll components being rendered with react
+```
+$ bundle install
+```
 
-`./react-dev/helpers.js`
-- these are global helpers. Right now all that is included are the static routes of you're site. Put all your static routes there (in 'staticRoutes' array), you don't need the full route just the base after your url So for example, if my posts are static and are at
- `http://www.example.com/posts/this-is-a-post.html`
- you just need "/posts/"
- this makes the loading of some parts of the site seem almost 'instant', while preserving the SEO of your site since Google can crawl the static content
+Use it!
 
-`./react-dev/components/menu_items.js`
+```
+$ jekyll serve
+```
 
-- This is where your menu items are rendered. If you want a new item, add an object to the Hashlist with it's corresponding path (from your root url) Javascript object. IE if it is:
+# Setup
 
-`const menuItems = { Home: '/', About: '/about/', Projects: '/projects/' };`
-and you want another entry, "Coding", with a path '/coding/' from the root url the object should look something like this :
-`const menuItems = { Home: '/', About: '/about/', Projects: '/projects/', Coding: '/coding'};`
+Some important configuration can be done in the file `_config.yml`. Please, check the Setup section in that file.
 
 
-`./react-dev/actions/index.js`
-- this is where the magic happens from the JSON our Jekyll plugins rendered ( Jekyll_pages_api and Jekyll-react)
-You're going to want to add your site url to the `ROOT_URL` variable
-EX:
-if your site is at `http://www.example.com` change
-`const ROOT_URL = 'http://test_domain.com:4000';`
-to
-`const ROOT_URL = 'http://example.com';`
+## baseurl
+
+`baseurl` parameter is required in the case the site doesn't sit on the root of the domain. For example: http://pietromenna.github.io/jekyll-architect-theme
+
+In the case above the baseurl should be set to "/jekyll-architect-theme".
+
+In the case the site sits in the root, you can leave `baseurl` as empty "".
 
 
-### Site Config Variables:
-any site configuration that you want to let React use, put under 'react' in your `_config.yml`. This will be grabbed by the siteInfo action creator and put through it's corresponding reducer
+For more details read about [Jekyll][1] on its web page.
 
-### TODO:
- - [x] create a jekyll plugin to output all [YML config] site data into JSON, in such a way which is importable to react and can be used to manage state
- - [x] [possible TODO, maybe redundant. ?] Rendered JS to HTML and outputted into a folder for Jekyll to take it. This allows us to use React components on `_layouts`
- - [x] create a Dynamic Search Function with Auto Fill
- - [x] Finish implementing Toggle Theme Switch
- - [ ] add useful important information to single-post post meta
- - [ ] make footer look better on mobile
- - [ ] Implement 'sliding' on mobile-touchA
- - [ ] make expanded search bar more responsive on mobile
- - [ ] create category pages
- - [ ] add pagination
- - [ ] Make different post 'types' (IE Fullsize page)
- - [ ] make it easier to use with Jekyll
- - [ ] Save theme in sites cookies
+# Contributing
 
+Bug reports and pull requests are welcome on GitHub at https://github.com/pietromenn/jekyll-architect-theme.
 
-### Contribution
-Want to contribute? Found an issue? Jump right in! I welcome any help I can get, and will work with you to fix any issues.
+# Development
+
+To set up your environment to develop this theme, run `bundle install`.
+
+You theme is setup just like a normal Jelyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+
+# License
+
+This work is licensed under a [Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/).
+
+[1]: http://jekyllrb.com
+[2]: https://github.com/jasonlong
+[3]: http://pages.github.com/
+[4]: http://github.com/jasonlong/architect-theme

@@ -1,15 +1,8 @@
-source 'https://rubygems.org'
+# A sample Gemfile
+source "https://rubygems.org"
+gemspec
 
-group :jekyll_plugins do
-  gem 'jekyll'
-  gem 'jekyll-paginate'
-  gem 'jekyll-gist'
-  gem 'jekyll-assets'
-  gem 'jekyll-watch'
-  gem 'jekyll_pages_api', :git => "https://github.com/18F/jekyll_pages_api"
-  gem 'jekyll-react'
-  gem 'uglifier'
-  gem 'sass'
-  gem 'kramdown'
-  gem 'rouge'
-end
+gem 'jekyll'
+gem 'jekyll-paginate'
+gem 'kramdown'
+gem 'pygments.rb'
