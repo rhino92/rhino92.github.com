@@ -9,6 +9,7 @@ categories: 笔记
 description: onenote整理
 ---
 ###常见问题
+
 **1. the method list(String, Object[]) is ambiguous for the type**
 
 **解决方法** 打开eclipse.ini，在-vmargs后面添加 
