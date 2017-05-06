@@ -8,7 +8,7 @@ tags:
 categories: 笔记
 description: onenote整理
 ---
-##常见问题
+## 常见问题
 
 ### 1. the method list(String, Object[]) is ambiguous for the type
 
@@ -39,5 +39,5 @@ description: onenote整理
 
 重启eclipse project，右键项目，点击Validate， => The (false) warnings are gone.
 
-##主题安装
+## 主题安装
 [http://eclipse-color-theme.github.com/update](http://eclipse-color-theme.github.com/update)
