@@ -6,6 +6,7 @@ tags:
 - 数据处理
 categories: 笔记
 description: 
+typora-root-url: ..
 ---
 # 1. 配置
 
@@ -28,7 +29,7 @@ description:
 
      设置数据库连接
 
-     ![1568000016640](pic/sjklj.png)
+     ![1568000016640](/assets/blogimg/sjklj.png)
 
    * 连接
 
