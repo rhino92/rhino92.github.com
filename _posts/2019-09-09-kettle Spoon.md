@@ -28,7 +28,7 @@ description:
 
      设置数据库连接
 
-     ![1568000016640](https://github.com/rhino92/rhino92.github.com/blob/master/_posts/pic/sjklj.png?raw=true)
+     ![1568000016640](pic/sjklj.png)
 
    * 连接
 
