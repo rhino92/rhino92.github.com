@@ -1,24 +1,18 @@
 ---
 layout: default
 ---
-
-<div id='top' class="main-content">
-   
-    <article class="module color-3">
-       
-        <h1>{{ page.title }}{{ page.shortUrl }}</h1>
-        <div class='separator'></div>
-        
-        {{ content }}
-        
-        <p class="top"><small><a href="#top">[top]</a></small></p>
-        
-    </article>
-    
-    {% if site.enable-share %} {% include share.html %} {% endif %}
-    {% if site.disqus-id %} {% include comments.html %} {% endif %}
-
-</div>
-
-
-
+{% assign post = page %}
+<main class="container">
+    <div class="row">
+        <div class="col-2">
+            <a href="{{ site.baseurl }}/">[ Home ]</a>
+            <article>
+                <h1>{{ post.title }}</h1>
+                <small>{% include post_date.html %}</small>
+                <p>{{ content }}</p>
+            </article>
+            {% include buttons.html %}
+        </div>
+        {% include post_sidebar.html %}
+    </div>
+</main>
