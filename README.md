@@ -1,54 +1,107 @@
-Jekyll Xixia
-============
+This theme stared out being a fork from the [Block-log](https://github.com/anandubajith/block-log). It still keeps many similarities. Minimal-block is a minimalistic, responsive and friendly Jekyllrb theme. It has almost no javascript (except for disquss), static social share buttons, rss, paginator, clean and simple permalinks and RSS.
 
-* Get it from [github](https://github.com/zxixia/jekyll-xixia).
-* See the [live demo](http://zxixia.github.io/jekyll-xixia/).
-* See it [in action on my own blog](http://xixia.info/).
 
-A simple and clean Jekyll theme using [bootstrap](http://getbootstrap.com)
-(not to be confused with jekyll-bootstrap) that's easy to modify and very
-modular in component and element reuse.
+[Live Demo](http://drvy.github.io/minimal-block/)
 
-The theme works well on mobile phones, using a collapsable nav bar and hiding the
-sidebar. The links pane in the sidebar is available on mobile through the nav menu,
-and you can do the same thing for any other sections added to the sidebar.
+[Download](https://github.com/drvy/minimal-block/archive/master.zip)
 
-Don't forget to occassionally merge against my upstream repository so you can get
-the latest changes. Pull requests are encouraged and accepted!
+[Github Repository](https://github.com/drvy/minimal-block)
 
-Preview
-=======
-![Xixia](/assets/images/preview.png)
 
-License
-=======
+![minimal-block preview](https://raw.githubusercontent.com/drvy/minimal-block/master/preview.png)
 
-The content of this theme is distributed and licensed under a
-![License Badge](assets/images/cc_by_88x31.png)
-[Creative Commons Attribution 4.0 License](https://creativecommons.org/licenses/by/4.0/legalcode)
+Setting up
+----------------
+To start you own blog, simply git clone the repository on github.
 
-    This license lets others distribute, remix, tweak, and build upon your work,
-    even commercially, as long as they credit you for the original creation. This
-    is the most accommodating of licenses offered. Recommended for maximum
-    dissemination and use of licensed materials.
+    git clone https://github.com/drvy/minimal-block.git
 
-In other words: you can do anything you want with this theme on any site, just please
-provide a link to [the original theme on github](https://github.com/zxixia/jekyll-xixia)
-so I get credit for the original design. Beyond that, have at it!
+Once cloned, edit the `_config.yml` file at the root of the repository.
 
-Thanks
-======
+To add your own posts, add a file to the _posts directory. The file name has to follow the following structure.
 
-1，[Jekyll][jekyll-url]
+    year-month-day-title.md
+    2015-01-25-Hello-world.md
 
-2，[Bootstrap][bootstrap-url]
+The post doesn't have to be writen in markdown but it's recomended. Notice that the URL of the post will contain the “Hello-world” part so the title of the file must be URL friendly.
 
-3，[Github][github-url]
 
-4，[Jekyll Clean Theme][Jekyll-Clean-Theme-url]
+Things to change in `_config.yml`
+----------------
+This file contains the configuration of your blog. By default, it looks like this:
 
-[jekyll-url]: http://jekyllrb.com/
-[bootstrap-url]: http://getbootstrap.com/
-[github-url]: https://github.com/
-[Jekyll-Clean-Theme-url]: https://github.com/scotte/jekyll-clean
-[xixia-url]: http://xixia.info/
+    # General
+    name: Minimal-Block
+    description: "Minimalistic, friendly, responsive."
+    url: http://localhost:4000
+
+    markdown: redcarpet
+    highlighter: pygments
+
+    paginate: 5
+    permalink: /:title
+
+    # Social share and comments.
+    disqus-id: yourusername
+    twitter: yourusername
+    github: yourusername
+    google: +yourusername
+
+    # RSS feed
+    rss-feed-limit: 10
+    rss-show-full: "yes"
+
+You will need to change `name` , `url` , `twitter`, `disqus-id`, `google` and `github`. All others are optional. Here is what the variables mean.
+
+<table>
+<thead>
+    <tr><th>Name</th><th>Description</th></tr>
+</thead>
+<tbody>
+    <tr><td>name</td><td>The name of your jekyll site. The title.</td></tr>
+    <tr><td>description</td><td>Basic description. Sub-title.</td></tr>
+    <tr><td>url</td><td>Where will be the jekyll site. The main URL without the endind / (slash).</td></tr>
+    <tr><td>markdown</td><td>The preffered markdown parser to use.</td></tr>
+    <tr><td>highlighter</td><td>The syntax-highlighter to use. If not set, `highlights.css` will not be included.</td></tr>
+    <tr><td>paginate</td><td>How much posts to show per page.</td></tr>
+    <tr><td>permalink</td><td>The friendly urls of the post. `none` is the jekyll default.</td></tr>
+    <tr><td>disqus-id</td><td>The disqus ID. If not set, comments will not be shown.</td></tr>
+    <tr><td>twitter</td><td>Your twitter username (used while sharing).</td></tr>
+    <tr><td>github</td><td>Your github username.</td></tr>
+    <tr><td>google</td><td>Youre google+ username.</td></tr>
+    <tr><td>rss-feed-limit</td><td>How much entries to display in the feed.xml (rss).</td></tr>
+    <tr><td>rss-show-full</td><td>The show the full post or to put only the excerpt (yes | no).</td>
+</tbody>
+</table>
+
+For more information on Jekyll, visit their [wiki on github](https://github.com/mojombo/jekyll/wiki). For more information on GitHub Pages visit [their site](http://pages.github.com).
+
+
+Writing posts.
+----------------
+Checkout the Jekyllrb [wiki](https://github.com/mojombo/jekyll/wiki) for documentation on writing posts. This theme
+makes use of static sharing buttons and they use a few tags that you should include in your posts.
+An example of a post header:
+
+    ---
+    layout: post
+    title:  "minimal-block - A minimalistic responsive Jekyll theme"
+    date:   2015-01-25 00:00:00
+    categories: jekyll, themes
+    tags: jekyll, theme, minimal
+    shortUrl: http://goo.gl/JhfZT9
+    ---
+
+Most of these variables are just the default ones but the last two (`tags` and `shortUrl`) are used by the theme when sharing via the social buttons in the end of every post.
+
+Specifically, `tags` will be converted into hashtags when sharing on Twitter and if you supply a `shortUrl`, it will be used instead of the full url. This is useful if you are using [goo.gl](http://goo.gl) since they provide statistics for each short link and that way you can see how many people are sharing your post.
+
+
+Pages and other files.
+----------------
+Each page has its own directory in the root folder of the theme. In each directory there is an index.html representing the contents of the page. Take a look at the default ones (about and contact) to see the structure.
+
+Another file to know about is the `footer.html` as it has the copyright notice and credits. This file is located in the `_includes` folder. You can remove the credits if you want but I would love you if you give me some credit in the HTML source.
+
+The `404` file is located in the root folder and it contains the exactly same structure as a page.
+
