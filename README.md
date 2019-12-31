@@ -1,107 +1,86 @@
-This theme stared out being a fork from the [Block-log](https://github.com/anandubajith/block-log). It still keeps many similarities. Minimal-block is a minimalistic, responsive and friendly Jekyllrb theme. It has almost no javascript (except for disquss), static social share buttons, rss, paginator, clean and simple permalinks and RSS.
+# Jekyll-Jacman
 
+**中文 | [English](/README_en.md)**
 
-[Live Demo](http://drvy.github.io/minimal-block/)
+Jekyll-Jacman 是为 [Jekyll](http://jekyllrb.com) 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 [Hexo Jacman](https://github.com/wuchong/jacman) 移植而来。
 
-[Download](https://github.com/drvy/minimal-block/archive/master.zip)
+ * [主题演示](http://simpleyyt.github.io/jekyll-jacman/)
+ * [Yitao's Blog](http://simpleyyt.github.io)
+ * [如何使用 Jacman 主题](http://simpleyyt.github.io/jekyll-jacman/jekyll/2015/09/20/how-to-use-jacman)
 
-[Github Repository](https://github.com/drvy/minimal-block)
+##本地搭建
 
+确保已安装`Ruby 2.1.0` 或更高版本：
 
-![minimal-block preview](https://raw.githubusercontent.com/drvy/minimal-block/master/preview.png)
+```sh
+ruby --version
+```
 
-Setting up
-----------------
-To start you own blog, simply git clone the repository on github.
+安装`Bundler`：
 
-    git clone https://github.com/drvy/minimal-block.git
+```sh
+gem install bundler
+```
 
-Once cloned, edit the `_config.yml` file at the root of the repository.
+下载 Jacman 主题：
 
-To add your own posts, add a file to the _posts directory. The file name has to follow the following structure.
+```sh
+git clone https://github.com/Simpleyyt/jekyll-jacman.git
+cd jekyll-jacman
+```
 
-    year-month-day-title.md
-    2015-01-25-Hello-world.md
+安装依赖：
 
-The post doesn't have to be writen in markdown but it's recomended. Notice that the URL of the post will contain the “Hello-world” part so the title of the file must be URL friendly.
+```sh
+bundle install
+```
 
+运行 Jekyll：
 
-Things to change in `_config.yml`
-----------------
-This file contains the configuration of your blog. By default, it looks like this:
+```sh
+bundle exec jekyll server
+```
 
-    # General
-    name: Minimal-Block
-    description: "Minimalistic, friendly, responsive."
-    url: http://localhost:4000
+更多细节可以参考：[Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
 
-    markdown: redcarpet
-    highlighter: pygments
+##功能
+- **菜单 menu**  
+ 主导航菜单
+- **控件 widget**  
+ 侧边栏的控件。包括：Github 名片	、分类、标签、RSS、友情链接、微博秀。
+- **图片相关 Image**  
+ 设置网站图标、网站logo、作者头像、博客顶部大图等。还提供了多种图片样式`img-logo`,`img-topic`,`img-center`等。
+- **首页模式 index**  
+ 主题提供了两种首页展示模式。
+- **作者 author**  
+ 作者信息，主要用于展示网站右下角的社交网络链接。包括：微博、豆瓣、知乎、邮箱、GitHub、StackOverflow、Twitter、Facebook、Linkedin、Google+。
+- **目录 toc**  
+ 在文章中和侧边栏可以显示目录。
+- **评论 comments**  
+ 支持 [多说](http://duoshuo.com/) & [disqus](https://disqus.com/) 评论。
+- **分享 jiathis**  
+ 启用 内建分享工具 或 [加网](http://www.jiathis.com/) 分享系统。
+- **网站统计 Analytiscs**  
+ 支持 [谷歌统计](http://www.google.com/analytics/) & [百度统计](http://tongji.baidu.com/) & [CNZZ站长统计](http://www.cnzz.com/)。
+- **Search**  
+ 支持 [谷歌自定义搜索](https://www.google.com/cse/ ) & [百度站内搜索](http://zn.baidu.com/)  &[微搜索](http://tinysou.com/)。
+- **totop**  
+ 回到顶部。
+- **rss**  
+ RSS 订阅链接。
+- **fancybox**  
+ 图片查看的 [Fancybox](http://fancyapps.com/fancybox/) 工具。
+- **其他**
+ 你可以设置侧边栏在博文页面中不显示。
 
-    paginate: 5
-    permalink: /:title
+##关于 Kramdown 引擎
+由于 Github 不再支持原来的 redcarpet，因此每次更新时都会有 Page build warning 发到邮件。我新建了一个分支 kramdown，把 Markdown 引擎换成了 kramdown，把高亮换成了 rough。但是，kramdown 的 markdown 语法比较严格，我不喜欢。所以，你也可以像我一样建个规则过滤 Page build warning 邮件。
 
-    # Social share and comments.
-    disqus-id: yourusername
-    twitter: yourusername
-    github: yourusername
-    google: +yourusername
+##协议
+[MIT](/LICENSE)
 
-    # RSS feed
-    rss-feed-limit: 10
-    rss-show-full: "yes"
+##捐赠
 
-You will need to change `name` , `url` , `twitter`, `disqus-id`, `google` and `github`. All others are optional. Here is what the variables mean.
+支付宝捐赠链接还是要有的，万一真的有人捐呢。
 
-<table>
-<thead>
-    <tr><th>Name</th><th>Description</th></tr>
-</thead>
-<tbody>
-    <tr><td>name</td><td>The name of your jekyll site. The title.</td></tr>
-    <tr><td>description</td><td>Basic description. Sub-title.</td></tr>
-    <tr><td>url</td><td>Where will be the jekyll site. The main URL without the endind / (slash).</td></tr>
-    <tr><td>markdown</td><td>The preffered markdown parser to use.</td></tr>
-    <tr><td>highlighter</td><td>The syntax-highlighter to use. If not set, `highlights.css` will not be included.</td></tr>
-    <tr><td>paginate</td><td>How much posts to show per page.</td></tr>
-    <tr><td>permalink</td><td>The friendly urls of the post. `none` is the jekyll default.</td></tr>
-    <tr><td>disqus-id</td><td>The disqus ID. If not set, comments will not be shown.</td></tr>
-    <tr><td>twitter</td><td>Your twitter username (used while sharing).</td></tr>
-    <tr><td>github</td><td>Your github username.</td></tr>
-    <tr><td>google</td><td>Youre google+ username.</td></tr>
-    <tr><td>rss-feed-limit</td><td>How much entries to display in the feed.xml (rss).</td></tr>
-    <tr><td>rss-show-full</td><td>The show the full post or to put only the excerpt (yes | no).</td>
-</tbody>
-</table>
-
-For more information on Jekyll, visit their [wiki on github](https://github.com/mojombo/jekyll/wiki). For more information on GitHub Pages visit [their site](http://pages.github.com).
-
-
-Writing posts.
-----------------
-Checkout the Jekyllrb [wiki](https://github.com/mojombo/jekyll/wiki) for documentation on writing posts. This theme
-makes use of static sharing buttons and they use a few tags that you should include in your posts.
-An example of a post header:
-
-    ---
-    layout: post
-    title:  "minimal-block - A minimalistic responsive Jekyll theme"
-    date:   2015-01-25 00:00:00
-    categories: jekyll, themes
-    tags: jekyll, theme, minimal
-    shortUrl: http://goo.gl/JhfZT9
-    ---
-
-Most of these variables are just the default ones but the last two (`tags` and `shortUrl`) are used by the theme when sharing via the social buttons in the end of every post.
-
-Specifically, `tags` will be converted into hashtags when sharing on Twitter and if you supply a `shortUrl`, it will be used instead of the full url. This is useful if you are using [goo.gl](http://goo.gl) since they provide statistics for each short link and that way you can see how many people are sharing your post.
-
-
-Pages and other files.
-----------------
-Each page has its own directory in the root folder of the theme. In each directory there is an index.html representing the contents of the page. Take a look at the default ones (about and contact) to see the structure.
-
-Another file to know about is the `footer.html` as it has the copyright notice and credits. This file is located in the `_includes` folder. You can remove the credits if you want but I would love you if you give me some credit in the HTML source.
-
-The `404` file is located in the root folder and it contains the exactly same structure as a page.
-
+![支付宝扫码捐赠](http://p1.bpimg.com/567571/9a4a158daee8aa69.png)
