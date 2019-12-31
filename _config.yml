@@ -1,25 +1,29 @@
-permalink: /:year:month:day/:title
-url: #Your url here
-baseurl: /project
+# Jekyll configuration
 
-# variables
-name: Your Site Name
-description: Your description here
-google_verification: null
+name: Xixia
+description: Welcome to Xixia！
 
+# url is currently only used only for the RSS feed in feed.xml
+url: https://github.com/zxixia/jekyll-xixia
 
-# File management
-include: [".htaccess"]
-exclude: ["README.md", "LICENSE"]
+# baseurl will often be '', but for a project page on gh-pages, it needs to
+# be the project name.
+# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
+#     run it like so: jekyll serve --baseurl=''
+baseurl: '/jekyll-xixia'
+## default date_format
+date_format: 
+  title: "%B-%-d-%Y"
+  archive: "%b"
+  categories: "%b-%Y"
+  tag: "%b-%Y"
+# Language
+lan: "en" 
 
-# Sass
-sass:
-  style: :compressed
-  sass_dir: _sass
+paginate: 10
 
-# Markdown
+highlighter: rouge
 markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter_opts:
-    disable : true
+gems: ['jekyll-paginate']
+
+exclude: ['README.md', 'LICENSE', "*.bak"]
